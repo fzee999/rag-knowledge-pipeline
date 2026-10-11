@@ -1,0 +1,98 @@
+[
+  {
+    "filename": "gitlab-handbook/values.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/values/_index.md",
+    "page_url": "https://handbook.gitlab.com/handbook/values/",
+    "title": "GitLab Values",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/expenses.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/finance/expenses.md",
+    "page_url": "https://handbook.gitlab.com/handbook/finance/expenses/",
+    "title": "GitLab Global Travel and Expense Policy",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/spending-company-money.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/finance/spending-company-money.md",
+    "page_url": "https://handbook.gitlab.com/handbook/finance/spending-company-money/",
+    "title": "GitLab Spending Company Money",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/confidentiality-levels.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/communication/confidentiality-levels.md",
+    "page_url": "https://handbook.gitlab.com/handbook/communication/confidentiality-levels/",
+    "title": "GitLab Confidentiality Levels",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/password-guidelines.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/security/password-guidelines.md",
+    "page_url": "https://handbook.gitlab.com/handbook/security/password-guidelines/",
+    "title": "GitLab Password Guidelines",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/responding-to-ransomware.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/security/responding-to-ransomware.md",
+    "page_url": "https://handbook.gitlab.com/handbook/security/responding-to-ransomware/",
+    "title": "GitLab Responding to Ransomware",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/acceptable-use-policy.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/people-group/acceptable-use-policy.md",
+    "page_url": "https://handbook.gitlab.com/handbook/people-group/acceptable-use-policy/",
+    "title": "GitLab Internal Acceptable Use Policy",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/anti-harassment.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/people-group/anti-harassment.md",
+    "page_url": "https://handbook.gitlab.com/handbook/people-group/anti-harassment/",
+    "title": "GitLab Anti-Harassment Policy",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/mission.md",
+    "url": "https://gitlab.com/gitlab-com/content-sites/handbook/-/raw/main/content/handbook/company/mission.md",
+    "page_url": "https://handbook.gitlab.com/handbook/company/mission/",
+    "title": "GitLab Mission",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "gitlab-handbook/time-off-types.html",
+    "url": "https://handbook.gitlab.com/handbook/people-group/time-off-and-absence/time-off-types/",
+    "page_url": "https://handbook.gitlab.com/handbook/people-group/time-off-and-absence/time-off-types/",
+    "title": "GitLab Time Off Types",
+    "publisher": "GitLab",
+    "license": "CC BY-SA 4.0"
+  },
+  {
+    "filename": "nist/NIST.CSWP.29.pdf",
+    "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+    "page_url": "https://doi.org/10.6028/NIST.CSWP.29",
+    "title": "NIST Cybersecurity Framework (CSF) 2.0",
+    "publisher": "NIST",
+    "license": "Public domain (U.S. Government work)"
+  },
+  {
+    "filename": "nist/NIST.SP.800-63B-4.pdf",
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63B-4.pdf",
+    "page_url": "https://doi.org/10.6028/NIST.SP.800-63B-4",
+    "title": "NIST SP 800-63B-4 Digital Identity Guidelines: Authentication and Authenticator Management",
+    "publisher": "NIST",
+    "license": "Public domain (U.S. Government work)"
+  }
+]

@@ -1,0 +1,17 @@
+{"question": "How long do I have to submit an expense claim before it won't be reimbursed without my manager's approval?", "expected_sources": ["gitlab-handbook/spending-company-money.md", "gitlab-handbook/expenses.md"], "answer_contains": ["90 days"]}
+{"question": "What is the largest single item I can expense through Navan before it has to go through procurement?", "expected_sources": ["gitlab-handbook/expenses.md"], "answer_contains": ["5,000|5000|5K"]}
+{"question": "What is the maximum monthly amount of expenses that gets reimbursed before extra approval is needed?", "expected_sources": ["gitlab-handbook/expenses.md"], "answer_contains": ["10K|10,000|10k"]}
+{"question": "Who should I report harassment to?", "expected_sources": ["gitlab-handbook/anti-harassment.md"], "answer_contains": ["Team Member Relations|People Business Partner|Chief People Officer"]}
+{"question": "Am I allowed to use my company laptop for personal things?", "expected_sources": ["gitlab-handbook/acceptable-use-policy.md", "gitlab-handbook/spending-company-money.md"], "answer_contains": ["personal"]}
+{"question": "Can I forward confidential work emails to my personal email account?", "expected_sources": ["gitlab-handbook/acceptable-use-policy.md"], "answer_contains": ["prohibited|not permitted|not allowed"]}
+{"question": "Which password manager does GitLab use?", "expected_sources": ["gitlab-handbook/password-guidelines.md"], "answer_contains": ["1Password"]}
+{"question": "Who should be engaged first when a ransomware attack is detected?", "expected_sources": ["gitlab-handbook/responding-to-ransomware.md"], "answer_contains": ["SIRT"]}
+{"question": "What kinds of information are limited access and not shared with all team members?", "expected_sources": ["gitlab-handbook/confidentiality-levels.md"], "answer_contains": ["reorganization|pricing|contracts"]}
+{"question": "What are GitLab's core values?", "expected_sources": ["gitlab-handbook/values.md"], "answer_contains": ["Collaboration", "Results", "Efficiency", "Diversity", "Iteration", "Transparency"]}
+{"question": "What was GitLab's original mission?", "expected_sources": ["gitlab-handbook/mission.md"], "answer_contains": ["everyone can contribute"]}
+{"question": "Is there a limit on paid time off, and when do I need special permission for a long absence?", "expected_sources": ["gitlab-handbook/time-off-types.html"], "answer_contains": ["25"]}
+{"question": "What are the six Functions of the NIST Cybersecurity Framework 2.0?", "expected_sources": ["nist/NIST.CSWP.29.pdf"], "answer_contains": ["Govern", "Identify", "Protect", "Detect", "Respond", "Recover"]}
+{"question": "What are the four CSF Tiers?", "expected_sources": ["nist/NIST.CSWP.29.pdf"], "answer_contains": ["Partial", "Risk Informed", "Repeatable", "Adaptive"]}
+{"question": "What is the minimum length for passwords used as single-factor authentication under NIST SP 800-63B-4?", "expected_sources": ["nist/NIST.SP.800-63B-4.pdf"], "answer_contains": ["15 characters|15-character|fifteen characters"]}
+{"question": "Should we force users to change their passwords periodically?", "expected_sources": ["nist/NIST.SP.800-63B-4.pdf"], "answer_contains": ["SHALL NOT|shall not|should not|not require"]}
+{"question": "How many consecutive failed authentication attempts are allowed before an authenticator is disabled?", "expected_sources": ["nist/NIST.SP.800-63B-4.pdf"], "answer_contains": ["100"]}
