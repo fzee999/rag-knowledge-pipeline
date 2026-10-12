@@ -14,7 +14,7 @@ SEPARATORS = [r"\n## ", r"\n### ", r"\n#### ", r"\n\n", r"\n", r"(?<=[.!?]) ", "
 def split_documents(
     docs: list[Document],
     chunk_size: int = 1000,
-    chunk_overlap: int = 150,
+    chunk_overlap: int = 250,
     min_chunk_chars: int = 200,
 ) -> list[Document]:
     splitter = RecursiveCharacterTextSplitter(

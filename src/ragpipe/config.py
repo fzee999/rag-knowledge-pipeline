@@ -23,6 +23,9 @@ class Settings:
     chunk_size: int
     chunk_overlap: int
     top_k: int
+    retrieval_mode: str = "hybrid_rerank"
+    retrieval_candidates: int = 20
+    rerank_model: str = "Xenova/ms-marco-MiniLM-L-6-v2"
 
 
 @lru_cache
@@ -42,6 +45,9 @@ def get_settings() -> Settings:
         chroma_dir=os.getenv("CHROMA_DIR", ".chroma"),
         collection=os.getenv("CHROMA_COLLECTION", "documents"),
         chunk_size=int(os.getenv("CHUNK_SIZE", "1000")),
-        chunk_overlap=int(os.getenv("CHUNK_OVERLAP", "150")),
+        chunk_overlap=int(os.getenv("CHUNK_OVERLAP", "250")),
         top_k=int(os.getenv("TOP_K", "5")),
+        retrieval_mode=os.getenv("RETRIEVAL_MODE", "hybrid_rerank"),
+        retrieval_candidates=int(os.getenv("RETRIEVAL_CANDIDATES", "20")),
+        rerank_model=os.getenv("RERANK_MODEL", "Xenova/ms-marco-MiniLM-L-6-v2"),
     )

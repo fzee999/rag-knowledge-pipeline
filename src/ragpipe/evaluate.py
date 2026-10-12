@@ -13,6 +13,7 @@ Answers (optional, calls Claude):
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from langchain_chroma import Chroma
@@ -47,9 +48,15 @@ def load_eval_set(path: str | Path) -> list[dict]:
 
 
 def answer_matches(answer: str, expected: list[str]) -> bool:
-    """Every expected phrase must appear (case-insensitive); "a|b" accepts either alternative."""
-    text = answer.lower()
-    return all(any(alt.lower() in text for alt in phrase.split("|")) for phrase in expected)
+    """Every expected phrase must appear as whole words (case-insensitive); "a|b" accepts either.
+
+    Whole words matter: plain substring matching let "Govern" match "governance" and "15" match
+    "2015", which made wrong answers look right.
+    """
+    def found(alt: str) -> bool:
+        return re.search(rf"(?<!\w){re.escape(alt)}(?!\w)", answer, re.IGNORECASE) is not None
+
+    return all(any(found(alt) for alt in phrase.split("|")) for phrase in expected)
 
 
 def evaluate_retrieval(items: list[dict], k: int, vectorstore: Chroma | None = None) -> dict:

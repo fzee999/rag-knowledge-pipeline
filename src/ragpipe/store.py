@@ -13,6 +13,7 @@ from ragpipe.chunking import split_documents
 from ragpipe.config import Settings, get_settings
 from ragpipe.embeddings import get_embeddings
 from ragpipe.loaders import load_directory, load_file
+from ragpipe.retrieval import get_reranker, keyword_index_for, rrf_fuse
 
 _BATCH_SIZE = 128
 
@@ -60,22 +61,41 @@ def index_documents(chunks: list[Document], vectorstore: Chroma) -> int:
     return len(chunks)
 
 
+RETRIEVAL_MODES = ("vector", "hybrid", "rerank", "hybrid_rerank")
+
+
 def search(
     query: str,
     k: int | None = None,
     vectorstore: Chroma | None = None,
     source: str | None = None,
+    mode: str | None = None,
 ) -> list[tuple[Document, float]]:
-    """Top-k chunks for `query` with cosine relevance scores (higher is better).
+    """Top-k chunks for `query`, best first. `source` restricts to one document, e.g. "nist/NIST.CSWP.29.pdf".
 
-    `source` restricts the search to one document, e.g. "nist/NIST.CSWP.29.pdf".
+    Modes (RETRIEVAL_MODE):
+      vector         cosine similarity only; score = relevance in [0, 1]
+      hybrid         BM25 + vector, fused by reciprocal rank; score = RRF score
+      rerank         vector top-N candidates rescored by a cross-encoder; score = cross-encoder logit
+      hybrid_rerank  hybrid top-N candidates rescored by the cross-encoder
     """
+    settings = get_settings()
+    k = k or settings.top_k
+    mode = mode or settings.retrieval_mode
+    if mode not in RETRIEVAL_MODES:
+        raise ValueError(f"RETRIEVAL_MODE must be one of {RETRIEVAL_MODES}, got {mode!r}")
     vectorstore = vectorstore or get_vectorstore()
-    return vectorstore.similarity_search_with_relevance_scores(
-        query,
-        k=k or get_settings().top_k,
-        filter={"source": source} if source else None,
+
+    n_candidates = k if mode == "vector" else max(settings.retrieval_candidates, k)
+    candidates = vectorstore.similarity_search_with_relevance_scores(
+        query, k=n_candidates, filter={"source": source} if source else None,
     )
+    if mode in ("hybrid", "hybrid_rerank"):
+        keyword_hits = keyword_index_for(vectorstore).search(query, n_candidates, source=source)
+        candidates = rrf_fuse(candidates, keyword_hits, limit=n_candidates)
+    if mode in ("rerank", "hybrid_rerank"):
+        return get_reranker(settings.rerank_model).rerank(query, (doc for doc, _ in candidates), k)
+    return candidates[:k]
 
 
 def list_sources(vectorstore: Chroma | None = None) -> list[dict]:

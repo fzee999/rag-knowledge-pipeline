@@ -81,3 +81,6 @@ def test_answer_matching_supports_alternatives():
     assert answer_matches("The limit is $10,000 per month.", ["10K|10,000"])
     assert not answer_matches("The limit is high.", ["10K|10,000"])
     assert answer_matches("Govern and Identify", ["govern", "identify"])
+    assert not answer_matches("risk governance", ["govern"])           # whole words only
+    assert not answer_matches("published in 2015", ["15"])
+    assert answer_matches("Use 1Password.", ["1Password"])

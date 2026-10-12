@@ -1,3 +1,9 @@
+import os
+
+# Tests stay offline: plain vector search unless a test picks a mode (the default
+# hybrid_rerank mode would load the real cross-encoder model).
+os.environ["RETRIEVAL_MODE"] = "vector"
+
 import pytest
 from langchain_core.documents import Document
 from langchain_core.embeddings import DeterministicFakeEmbedding
