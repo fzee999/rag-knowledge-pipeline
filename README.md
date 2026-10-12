@@ -53,6 +53,12 @@ ollama pull llama3.1:8b
 Then:
 
 ```bash
+git clone https://github.com/fzee999/rag-knowledge-pipeline.git
+```
+```bash
+cd rag-knowledge-pipeline
+```
+```bash
 py -3.12 -m venv .venv
 ```
 ```bash
@@ -130,4 +136,4 @@ download, Ollama or API key is needed.
 
 ## Related
 
-[agentic-doc-assistant](../agentic-doc-assistant) builds a LangGraph agent on top of this pipeline.
+[agentic-doc-assistant](https://github.com/fzee999/agentic-doc-assistant) builds a LangGraph agent on top of this pipeline.
